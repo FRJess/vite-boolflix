@@ -30,9 +30,6 @@ export default {
 
   @include positionFlex('between');
   @include centerFlex('vertical');
-  img{
-    // margin-left: 10px;
-  }
 }
 
 </style>
