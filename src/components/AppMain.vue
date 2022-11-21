@@ -20,7 +20,7 @@ export default {
   <div class="jt-container">
     <div class="row">
       <MovieCard
-      v-for="movie in store.moviesList" 
+      v-for="movie in store.moviesShowsList" 
       :key="movie.id"
       :movie="movie"
       />

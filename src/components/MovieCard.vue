@@ -17,7 +17,7 @@ export default {
 
 
     <div class="name">{{movie.title}}</div>
-    <div class="name">{{movie.original_title}}</div>
+    <div class="original-name">{{movie.original_title}}</div>
     <div class="language">{{movie.original_language}}</div>
     <div class="vote">{{movie.vote_average}}</div>
   

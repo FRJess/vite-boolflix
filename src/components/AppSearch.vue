@@ -1,21 +1,25 @@
 <script>
+import { store } from '../data/store'
 export default {
   name: 'AppSearch',
-
+  data(){
+    return{
+      store
+    }
+  }
 }
 </script>
 
 <template>
   <div class="search-container">
-
     <div class="row">
 
       <div class="col-auto">
-        <input type="text" class="form-control" placeholder="Search Movie">
+        <input v-model="store.movieShowSearch" type="text" class="form-control" placeholder="Search Movie">
       </div>
 
       <div class="col-auto">
-        <button class="btn jt-btn px-4">Search</button>
+        <button @click="$emit('startSearch')" class="btn jt-btn px-4">Search</button>
       </div>
 
     </div>

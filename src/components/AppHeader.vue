@@ -14,7 +14,7 @@ export default {
 <template>
   <div class="jt-container p-3">
     <img src="../assets/img/logo.png" alt="logo Jessflix">
-    <AppSearch/>
+    <AppSearch @startSearch ="$emit('search')"/>
   </div>
 
   

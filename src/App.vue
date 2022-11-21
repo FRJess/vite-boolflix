@@ -19,15 +19,23 @@ export default {
 
   methods:{
     getMovies(){
-      axios.get(store.apiUrl)
+      axios.get(store.apiUrlMovies, {
+        params:{
+          api_key: store.apiKey,
+          query: store.movieShowSearch,
+        }
+      })
       .then( result => {
-        store.moviesList = result.data.results
-        console.log(store.moviesList)
+        store.moviesShowsList = result.data.results
+        // console.log(store.moviesShowsList)
       })
       .catch(error => {
         console.log(error)
       })
-    }
+    },
+    // startSearch(){
+    //   this.getMovies();
+    // }
   },
   mounted(){
     this.getMovies();
@@ -39,7 +47,7 @@ export default {
 
 <template>
 
-  <AppHeader/>
+  <AppHeader @search="getMovies()"/>
 
   <main>
     <AppMain/>
