@@ -40,8 +40,10 @@ export default {
 <template>
 
   <AppHeader/>
-  <AppMain/>
-  
+
+  <main>
+    <AppMain/>
+  </main>
 </template>
 
 

@@ -4,25 +4,27 @@ import MovieCard from './MovieCard.vue';
 
 export default {
   name:'AppMain',
-  data(){
-    return{
-      store
-    }
-  },
-
   components:{
     MovieCard,
-  }
+  },
+  data(){
+    return{
+      store,
 
+    }
+  },
 }
 </script>
 
 <template>
-  <MovieCard/>
   <div class="jt-container">
-    <ul>
-      <li v-for="movie in store.moviesList" :key="movie.id">{{movie.original_title}}</li>
-    </ul>
+    <div class="row">
+      <MovieCard
+      v-for="movie in store.moviesList" 
+      :key="movie.id"
+      :movie="movie"
+      />
+    </div>
   </div>
   
 </template>
@@ -31,10 +33,6 @@ export default {
 
 .jt-container{
   color: white;
-}
-li{
-  // color: white;
-  // background-color: red;
 }
 
 </style>
