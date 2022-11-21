@@ -15,7 +15,7 @@ export default {
     <div class="row">
 
       <div class="col-auto">
-        <input v-model="store.movieShowSearch" type="text" class="form-control" placeholder="Search Movie">
+        <input v-model="store.movieShowSearch" type="text" class="form-control" placeholder="Search Movie or TV Show">
       </div>
 
       <div class="col-auto">

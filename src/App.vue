@@ -18,15 +18,31 @@ export default {
   },
 
   methods:{
-    getMovies(){
+    getApi(){
       axios.get(store.apiUrlMovies, {
         params:{
-          api_key: store.apiKey,
+          // api_key: store.apiKey,
           query: store.movieShowSearch,
         }
       })
       .then( result => {
-        store.moviesShowsList = result.data.results
+        // store.moviesList = [];
+        store.moviesList = result.data.results
+        // console.log(store.moviesShowsList)
+      })
+      .catch(error => {
+        console.log(error)
+      })
+
+      axios.get(store.apiUrlTvShows, {
+        params:{
+          // api_key: store.apiKey,
+          query: store.movieShowSearch,
+        }
+      })
+      .then( result => {
+        store.tvShowsList = [];
+        store.tvShowsList = result.data.results
         // console.log(store.moviesShowsList)
       })
       .catch(error => {
@@ -37,9 +53,9 @@ export default {
     //   this.getMovies();
     // }
   },
-  mounted(){
-    this.getMovies();
-  },
+  // mounted(){
+  //   this.getApi();
+  // },
 
 }
 
@@ -47,7 +63,7 @@ export default {
 
 <template>
 
-  <AppHeader @search="getMovies()"/>
+  <AppHeader @search="getApi()"/>
 
   <main>
     <AppMain/>
