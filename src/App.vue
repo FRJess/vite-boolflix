@@ -17,15 +17,12 @@ export default {
 
 }
 
-
-
 </script>
 
 <template>
 
   <AppHeader/>
   <AppMain/>
-  <div>test</div>
   
 </template>
 
