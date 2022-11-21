@@ -1,0 +1,7 @@
+@use './partials/variables' as *;
+
+@import 'node_modules/@fontsource/bebas-neue/index.css';
+
+body {
+  font-family: $main-font
+}
