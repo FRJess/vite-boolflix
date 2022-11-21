@@ -3,5 +3,8 @@
 @import 'node_modules/@fontsource/bebas-neue/index.css';
 
 body {
-  font-family: $main-font
+  font-family: $main-font;
+  background-color: $secondary-color;
+  color: $primary-color;
+  text-transform: lowercase;
 }

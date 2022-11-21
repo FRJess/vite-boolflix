@@ -3,12 +3,12 @@ import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
-  // name: 'App',
-  // data(){
-  //   return{
+  name: 'App',
+  data(){
+    return{
 
-  //   }
-  // }
+    }
+  },
   
   components:{
     AppHeader,
@@ -25,12 +25,12 @@ export default {
 
   <AppHeader/>
   <AppMain/>
-  <div>prova</div>
+  <div>test</div>
   
 </template>
 
 
-<style lang="scss" scoped>
+<style lang="scss">
 
 @use './styles/general';
 @use './styles/partials/variables.scss' as *;
