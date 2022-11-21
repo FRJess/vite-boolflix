@@ -18,10 +18,11 @@ export default {
   },
 
   methods:{
-    getResults(){
+    getMovies(){
       axios.get(store.apiUrl)
       .then( result => {
-        console.log(result.data)
+        store.moviesList = result.data.results
+        console.log(store.moviesList)
       })
       .catch(error => {
         console.log(error)
@@ -29,7 +30,7 @@ export default {
     }
   },
   mounted(){
-    this.getResults()
+    this.getMovies();
   },
 
 }
