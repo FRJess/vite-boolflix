@@ -1,0 +1,32 @@
+@mixin centerFlex($type: 'both') {
+  display: flex;
+
+  @if $type =='vertical' {
+    align-items: center;
+  }
+
+  @else if $type =='horizontal' {
+    justify-content: center;
+  }
+
+  @else if $type =='wrap' {
+    flex-wrap: wrap;
+  }
+
+  @else if $type =='both' {
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@mixin positionFlex($type: 'both') {
+  display: flex;
+
+  @if $type =='between' {
+    justify-content: space-between;
+  }
+
+  @else if $type =='around' {
+    justify-content: space-around;
+  }
+}

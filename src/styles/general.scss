@@ -1,6 +1,8 @@
 @use './partials/variables' as *;
 
 @import 'node_modules/@fontsource/bebas-neue/index.css';
+@import 'node_modules/bootstrap/scss/bootstrap';
+
 
 body {
   font-family: $main-font;
