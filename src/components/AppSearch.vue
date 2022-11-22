@@ -15,8 +15,21 @@ export default {
     <div class="row">
 
       <div class="col-auto">
-        <input v-model="store.movieShowSearch" type="text" class="form-control" placeholder="Search Movie or TV Show">
+        <input
+        @keyup.enter="$emit('starSearch')" 
+        v-model.trim="store.apiParams.movieShowSearch" type="text" class="form-control" placeholder="Search Movie or TV Show">
       </div>
+
+      <div class="col-auto">
+        <select
+        v-model="store.type" 
+        class="form-select">
+          <option value="All">All</option>
+          <option value="Movies">Movies</option>
+          <option value="TV Shows">TV Shows</option>
+        </select>
+      </div>
+
 
       <div class="col-auto">
         <button @click="$emit('startSearch')" class="btn jt-btn px-4">Search</button>
