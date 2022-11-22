@@ -37,13 +37,14 @@ export default {
 
 <template>
 
-  <div class="card col-3">
+  <div class="card col-2">
     <div class="informations">
       <div> {{ card.title || card.name }} </div>
-      <div> ({{ card.original_title || card.original_name }}) </div>
+      <!-- <div> ({{ card.original_title || card.original_name }}) </div> -->
       <div 
       :class="getFlag()"
       class="flag"></div>
+      <!-- <img :src="store.imageUrl + card.poster_path"> -->
 
     </div>
     
@@ -60,7 +61,6 @@ export default {
       inactive-color="white"></star-rating>
 
     </div>
-    <!-- <img :src="store.imageUrl + card.poster_path"> -->
     
   </div>
 
@@ -73,6 +73,7 @@ export default {
 @use "../styles/partials/mixins" as *;
 
 .card{
+  min-width: 200px;
   display: flex;
   background-color: white;
   height: 300px;

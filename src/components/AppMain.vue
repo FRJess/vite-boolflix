@@ -63,8 +63,16 @@ export default {
 
 <style lang="scss" scoped>
 
+@use "../styles/partials/mixins" as *;
+
 .jt-container{
+  width: 90%;
+  margin: 0 auto;
   color: white;
+  .row{
+    @include centerFlex('horizontal');
+    flex-wrap: wrap;
+  }
 }
 
 </style>
