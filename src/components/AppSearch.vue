@@ -17,7 +17,7 @@ export default {
       <div class="col-auto">
         <input
         @keyup.enter="$emit('starSearch')" 
-        v-model.trim="store.apiParams.movieShowSearch" type="text" class="form-control" placeholder="Search Movie or TV Show">
+        v-model.trim="store.apiParams.query" type="text" class="form-control" placeholder="Search Movie or TV Show">
       </div>
 
       <div class="col-auto">
@@ -25,8 +25,8 @@ export default {
         v-model="store.type" 
         class="form-select">
           <option value="All">All</option>
-          <option value="Movies">Movies</option>
-          <option value="TV Shows">TV Shows</option>
+          <option value="movie">Movies</option>
+          <option value="tv">TV Shows</option>
         </select>
       </div>
 

@@ -24,9 +24,9 @@ export default {
     getApi(type){
       axios.get(store.apiUrl + type, { params: store.apiParams })
       .then( result => {
-        // store[type] = [];
+        store[type] = [];
         store[type] = result.data.results;
-        // console.log(store.moviesShowsList)
+        console.log(result.data.results)
       })
       .catch(error => {
         console.log(error)
@@ -46,7 +46,7 @@ export default {
   },
 
   mounted(){
-    this.getApi('');
+    this.startSearch();
   },
 }
 
@@ -54,7 +54,7 @@ export default {
 
 <template>
 
-  <AppHeader @search="getApi()"/>
+  <AppHeader @search="startSearch()"/>
 
   <main>
     <AppMain/>

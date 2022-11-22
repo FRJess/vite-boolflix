@@ -24,9 +24,12 @@ export default {
   </div> -->
 
   <div class="card col-3">
-
+    
     <div> {{ card.title || card.name }} </div>
-
+    <div> {{ card.original_title || card.original_name }} </div>
+    <div> {{ card.language}} </div>
+    <div> {{ card.vote_average}} </div>
+    
   </div>
   
 </template>
