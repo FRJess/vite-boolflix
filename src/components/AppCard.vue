@@ -38,20 +38,23 @@ export default {
 <template>
 
   <div class="card col-3">
+    <div class="informations">
+      <div> {{ card.title || card.name }} </div>
+      <div> ({{ card.original_title || card.original_name }}) </div>
+      <div 
+      :class="getFlag()"
+      class="flag"></div>
+
+    </div>
     
-    <div> {{ card.title || card.name }} </div>
-    <div> ({{ card.original_title || card.original_name }}) </div>
     <!-- <div> {{ card.original_language}} </div> -->
-    <div 
-    :class="getFlag()"
-    class="flag"></div>
   
-    <div class="rating-stars">
+    <div class="rating-stars position-absolute bottom-0 start-0">
       <star-rating 
       :rating="getRating()"
       :star-size="20"
       :read-only="true"
-      :increment="0.5"
+      :increment="1"
       :active-color="['#E50815']"
       :show-rating="false"
       inactive-color="white"></star-rating>
@@ -70,19 +73,21 @@ export default {
 @use "../styles/partials/mixins" as *;
 
 .card{
-  @include centerFlex('vertical');
+  display: flex;
   background-color: white;
-  // text-align: center;
   height: 300px;
   margin:10px;
   padding: 20px 0;
   position: relative;
   color: black;
-  .flag{
-    margin: 20px 0;
+  .informations{
+    text-align: center;
+    .flag{
+      margin: 20px 0;
+    }
   }
   .rating-stars{
-    margin: 10px 0;
+    margin: 10px;
   }
 }
 

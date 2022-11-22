@@ -29,6 +29,10 @@
   @else if $type =='around' {
     justify-content: space-around;
   }
+
+  @else if $type =='start' {
+    justify-content: flex-start;
+  }
 }
 
 @mixin flexDirection($type: 'both') {
