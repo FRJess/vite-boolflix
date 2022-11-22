@@ -2,13 +2,11 @@
 import { store } from '../data/store';
 
 import AppCard from './AppCard.vue';
-import ShowCard from './ShowCard.vue';
 
 export default {
   name:'AppMain',
   components:{
     AppCard,
-    ShowCard,
   },
   // props:{
   //   title: String,
@@ -40,12 +38,14 @@ export default {
       v-for="card in store.movie" 
       :card="card"
       :key="card.id"
+      :pathImg="card.poster_path"
       />
 
       <AppCard
       v-for="card in store.tv" 
       :card="card"
       :key="card.id"
+      :pathImg="card.poster_path"
       />
 
 

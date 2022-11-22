@@ -21,8 +21,9 @@ export default {
     
     <div> {{ card.title || card.name }} </div>
     <div> {{ card.original_title || card.original_name }} </div>
-    <div> {{ card.language}} </div>
+    <div> {{ card.original_language}} </div>
     <div> {{ card.vote_average}} </div>
+    <!-- <img :src="'https://image.tmdb.org/t/p/w342/' + card.poster_path"> -->
     
   </div>
   
