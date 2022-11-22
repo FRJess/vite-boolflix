@@ -1,27 +1,21 @@
 <script>
+import { store } from '../data/store';
+
 export default {
-  name: 'MovieCard',
+  name: 'AppCard',
+  props:{
+    card: Object,
+  },
   data(){
     return{
+      store
 
     }
   },
-  props:{
-    card: Object
-  }
 }
 </script>
 
 <template>
-  <!-- <div class="card col-3">
-
-
-    <div class="name">{{movie.title}}</div>
-    <div class="original-name">{{movie.original_title}}</div>
-    <div class="language">{{movie.original_language}}</div>
-    <div class="vote">{{movie.vote_average}}</div>
-  
-  </div> -->
 
   <div class="card col-3">
     
@@ -41,6 +35,7 @@ export default {
 @use "../styles/partials/mixins" as *;
 
 .card{
+  background-color: white;
   text-align: center;
   height: 300px;
   margin:10px;

@@ -1,48 +1,60 @@
 <script>
 import { store } from '../data/store';
 
-import MovieCard from './MovieCard.vue';
+import AppCard from './AppCard.vue';
 import ShowCard from './ShowCard.vue';
 
 export default {
   name:'AppMain',
   components:{
-    MovieCard,
+    AppCard,
     ShowCard,
   },
-  props:{
-    title: String,
-    type: String,
-  },
+  // props:{
+  //   title: String,
+  //   type: String,
+  // },
   data(){
     return{
       store,
 
     }
   },
+  // computed:{
+  //   getOutputCounter(){
+  //     return store[type].length;
+  //   }
+  // }
 }
 </script>
 
 <template>
-  <h1 class="jt-container">
+  <!-- <h1 class="jt-container">
     {{title}}
-  </h1>
+  </h1> -->
 
   <div class="jt-container">
 
     <div class="row">
-      <MovieCard
+      <AppCard
+      v-for="card in store.movie" 
       :card="card"
-      v-for="card in store[type]" 
       :key="card.id"
-      :movie="card"
-      :titolo="card.title" 
+      />
+
+      <AppCard
+      v-for="card in store.tv" 
+      :card="card"
+      :key="card.id"
+      />
+
+
+      <!-- :titolo="card.title" 
       :titoloOriginal="card.original_title"
       :lingua="card.original_language"
       :voto="card.vote_average"
-      :pathImg="card.poster_path"
-      />
-
+      :pathImg="card.poster_path" -->
+      <!-- 
       <ShowCard
       v-for="tvShow in store.tvShowsList" 
       :key="tvShow.id"
@@ -52,7 +64,7 @@ export default {
       :lingua="tvShow.original_language"
       :voto="tvShow.vote_average"
       :pathImg="tvShow.poster_path"
-      />
+      /> -->
     </div>
   </div>
   

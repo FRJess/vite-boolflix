@@ -34,8 +34,8 @@ export default {
     },
 
     startSearch(){
-      store.moviesList = [];
-      store.tvShowsList = [];
+      store.movie = [];
+      store.tv = [];
       if(store.type === ''){
         this.getApi('movie');
         this.getApi('tv');

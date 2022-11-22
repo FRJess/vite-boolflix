@@ -5,11 +5,11 @@ export const store = reactive({
   apiParams: {
     api_key: '06a0961b60d2024ca572796f493b8635',
     query: '',
-    language: 'it-IT',
+    language: '',
   },
-  moviesList: [],
-  tvShowsList: [],
   type: '',
+  movie: [],
+  tv: [],
 })
 
 
