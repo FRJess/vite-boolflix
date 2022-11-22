@@ -21,7 +21,7 @@ export default {
     getApi(){
       axios.get(store.apiUrlMovies, {
         params:{
-          // api_key: store.apiKey,
+          api_key: store.apiKey,
           query: store.movieShowSearch,
         }
       })
@@ -36,7 +36,7 @@ export default {
 
       axios.get(store.apiUrlTvShows, {
         params:{
-          // api_key: store.apiKey,
+          api_key: store.apiKey,
           query: store.movieShowSearch,
         }
       })
