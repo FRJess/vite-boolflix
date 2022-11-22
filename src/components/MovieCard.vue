@@ -7,13 +7,13 @@ export default {
     }
   },
   props:{
-    movie: Object
+    card: Object
   }
 }
 </script>
 
 <template>
-  <div class="card col-3">
+  <!-- <div class="card col-3">
 
 
     <div class="name">{{movie.title}}</div>
@@ -21,6 +21,12 @@ export default {
     <div class="language">{{movie.original_language}}</div>
     <div class="vote">{{movie.vote_average}}</div>
   
+  </div> -->
+
+  <div class="card col-3">
+
+    <div> {{ card.title || card.name }} </div>
+
   </div>
   
 </template>

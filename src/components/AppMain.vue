@@ -1,5 +1,6 @@
 <script>
 import { store } from '../data/store';
+
 import MovieCard from './MovieCard.vue';
 import ShowCard from './ShowCard.vue';
 
@@ -8,6 +9,10 @@ export default {
   components:{
     MovieCard,
     ShowCard,
+  },
+  props:{
+    title: String,
+    type: String,
   },
   data(){
     return{
@@ -19,25 +24,31 @@ export default {
 </script>
 
 <template>
+  <h1 class="jt-container">
+    {{title}}
+  </h1>
+
   <div class="jt-container">
+
     <div class="row">
       <MovieCard
-      v-for="movie in store.moviesList" 
-      :key="movie.id"
-      :movie="movie"
-      :titolo="movie.title" 
-      :titoloOriginal="movie.original_title"
-      :lingua="movie.original_language"
-      :voto="movie.vote_average"
-      :pathImg="movie.poster_path"
+      :card="card"
+      v-for="card in store[type]" 
+      :key="card.id"
+      :movie="card"
+      :titolo="card.title" 
+      :titoloOriginal="card.original_title"
+      :lingua="card.original_language"
+      :voto="card.vote_average"
+      :pathImg="card.poster_path"
       />
 
       <ShowCard
       v-for="tvShow in store.tvShowsList" 
       :key="tvShow.id"
       :show="tvShow"
-      :titolo="tvShow.title" 
-      :titoloOriginal="tvShow.original_title"
+      :titolo="tvShow.name" 
+      :titoloOriginal="tvShow.name"
       :lingua="tvShow.original_language"
       :voto="tvShow.vote_average"
       :pathImg="tvShow.poster_path"

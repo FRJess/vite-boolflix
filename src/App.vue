@@ -1,11 +1,13 @@
 <script>
 import axios from 'axios';
 import { store } from './data/store';
+
 import AppHeader from './components/AppHeader.vue';
 import AppMain from './components/AppMain.vue';
 
 export default {
   name: 'App',
+
   data(){
     return{
       store
@@ -18,45 +20,34 @@ export default {
   },
 
   methods:{
-    getApi(){
-      axios.get(store.apiUrlMovies, {
-        params:{
-          api_key: store.apiKey,
-          query: store.movieShowSearch,
-        }
-      })
-      .then( result => {
-        // store.moviesList = [];
-        store.moviesList = result.data.results
-        // console.log(store.moviesShowsList)
-      })
-      .catch(error => {
-        console.log(error)
-      })
 
-      axios.get(store.apiUrlTvShows, {
-        params:{
-          api_key: store.apiKey,
-          query: store.movieShowSearch,
-        }
-      })
+    getApi(type){
+      axios.get(store.apiUrl + type, { params: store.apiParams })
       .then( result => {
-        store.tvShowsList = [];
-        store.tvShowsList = result.data.results
+        // store[type] = [];
+        store[type] = result.data.results;
         // console.log(store.moviesShowsList)
       })
       .catch(error => {
         console.log(error)
       })
     },
-    // startSearch(){
-    //   this.getMovies();
-    // }
-  },
-  // mounted(){
-  //   this.getApi();
-  // },
 
+    startSearch(){
+      store.moviesList = [];
+      store.tvShowsList = [];
+      if(store.type === ''){
+        this.getApi('movie');
+        this.getApi('tv');
+      }else{
+        this.getApi(store.type)
+      }
+    }
+  },
+
+  mounted(){
+    this.getApi('');
+  },
 }
 
 </script>
@@ -68,6 +59,7 @@ export default {
   <main>
     <AppMain/>
   </main>
+  
 </template>
 
 
