@@ -30,3 +30,12 @@
     justify-content: space-around;
   }
 }
+
+@mixin flexDirection($type: 'both') {
+  display: flex;
+
+  @if $type =='column' {
+    flex-direction: column;
+  }
+
+}

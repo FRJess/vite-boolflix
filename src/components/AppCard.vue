@@ -1,11 +1,15 @@
 <script>
 import { store } from '../data/store';
+import StarRating from 'vue-star-rating';
 
 export default {
   name: 'AppCard',
   props:{
     card: Object,
   },
+  components: {
+  StarRating
+},
   data(){
     return{
       store
@@ -23,6 +27,10 @@ export default {
       else return "fi fi-xx";
     },
 
+    getRating(){
+      return this.card.vote_average / 2;
+    }
+
   },
 };
 </script>
@@ -31,17 +39,28 @@ export default {
 
   <div class="card col-3">
     
-    <div 
-    :class="getFlag()"
-    class="flag"></div>
     <div> {{ card.title || card.name }} </div>
     <div> ({{ card.original_title || card.original_name }}) </div>
     <!-- <div> {{ card.original_language}} </div> -->
-    <div> {{ card.vote_average}} </div>
+    <div 
+    :class="getFlag()"
+    class="flag"></div>
+  
+    <div class="rating-stars">
+      <star-rating 
+      :rating="getRating()"
+      :star-size="20"
+      :read-only="true"
+      :increment="0.5"
+      :active-color="['#E50815']"
+      :show-rating="false"
+      inactive-color="white"></star-rating>
+
+    </div>
     <!-- <img :src="store.imageUrl + card.poster_path"> -->
     
   </div>
-  
+
 </template>
 
 
@@ -51,15 +70,19 @@ export default {
 @use "../styles/partials/mixins" as *;
 
 .card{
+  @include centerFlex('vertical');
   background-color: white;
-  text-align: center;
+  // text-align: center;
   height: 300px;
   margin:10px;
-  padding-bottom: 20px;
+  padding: 20px 0;
   position: relative;
   color: black;
   .flag{
-    margin: 10px
+    margin: 20px 0;
+  }
+  .rating-stars{
+    margin: 10px 0;
   }
 }
 
