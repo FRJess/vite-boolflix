@@ -10,5 +10,6 @@ export const store = reactive({
   type: '',
   movie: [],
   tv: [],
-  imageUrl: "https://image.tmdb.org/t/p/w345/",
+  imageUrl: "http://image.tmdb.org/t/p/w500",
+  flagClass: "fi fi-"
 })
