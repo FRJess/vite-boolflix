@@ -13,3 +13,8 @@ export const store = reactive({
   imageUrl: "http://image.tmdb.org/t/p/w500",
   flagClass: "fi fi-"
 })
+
+
+// const title = 'boolflix';
+// const langFlag = ['en','it', 'es', 'fr', 'hr', 'de'];
+// export {title, langFlag};

@@ -8,21 +8,12 @@ export default {
   components:{
     AppCard,
   },
-  // props:{
-  //   title: String,
-  //   type: String,
-  // },
   data(){
     return{
       store,
 
     }
   },
-  // computed:{
-  //   getOutputCounter(){
-  //     return store[type].length;
-  //   }
-  // }
 }
 </script>
 
