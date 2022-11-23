@@ -13,6 +13,9 @@ export const store = reactive({
   tv: [],
   imageUrl: "http://image.tmdb.org/t/p/w500",
   flagClass: "fi fi-",
-  isLoadMovie: true,
-  isLoadTV: true,
+  isLoadMovie: false,
+  isLoadTV: false,
 })
+
+//tofix: keyup non funziona in AppSearch - loader non appare
+

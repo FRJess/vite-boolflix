@@ -22,11 +22,15 @@ export default {
   methods:{
 
     getApi(type){
+      store.isLoadMovie = false;
+      store.isLoadTV = false;
       axios.get(store.apiUrl + type, { params: store.apiParams })
       .then( result => {
         store[type] = [];
         store[type] = result.data.results;
         console.log(result.data.results)
+        store.isLoadMovie = true;
+        store.isLoadTV = true;
       })
       .catch(error => {
         console.log(error)
@@ -34,14 +38,20 @@ export default {
     },
 
     startSearch(){
+      store.isLoadMovie = false;
+      store.isLoadTV = false;
       store.movie = [];
       store.tv = [];
       if(store.type === ''){
         this.getApi('movie');
         this.getApi('tv');
+        store.isLoadMovie = true;
+        store.isLoadTV = true;
       }else{
         this.getApi(store.type)
       }
+      store.apiParams.query = '';
+      store.type = '';
     }
   },
 

@@ -21,7 +21,7 @@ export default {
 
 <template>
 
-  <!-- <main v-if="store.isLoadMovie && store.isLoadTV">
+  <main v-if="store.isLoadMovie && store.isLoadTV">
     <div class="jt-container py-5" v-if="store.movie.length > 0">
 
       <div class="row">
@@ -61,10 +61,11 @@ export default {
     </div>
 
   </main>
-  <div class="loading" v-else>Loading...</div>   -->
 
-  <!-- app loading da fare -->
-  <AppLoading/>
+    <!-- app loading presente ma non appare-->
+    <AppLoading v-else/>
+
+ 
   
 </template>
 

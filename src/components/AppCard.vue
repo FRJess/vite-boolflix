@@ -20,7 +20,6 @@ export default {
   methods:{
     getSummary(){
       store.isOverviewClicked = true;
-      console.log('TRAMA')
     },
 
     resetCard(){
