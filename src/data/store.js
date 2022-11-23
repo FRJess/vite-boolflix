@@ -16,12 +16,3 @@ export const store = reactive({
   isLoadMovie: true,
   isLoadTV: true,
 })
-
-
-// const title = 'boolflix';
-// const langFlag = ['en','it', 'es', 'fr', 'hr', 'de'];
-// export {title, langFlag};
-
-// {{ card.vote_average}}
-
-// card con hover transform scale e informations hidden di default che appaiono

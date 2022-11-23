@@ -2,11 +2,13 @@
 import { store } from '../data/store';
 
 import AppCard from './AppCard.vue';
+import AppLoading from './AppLoading.vue'
 
 export default {
   name:'AppMain',
   components:{
     AppCard,
+    AppLoading,
   },
   data(){
     return{
@@ -19,7 +21,7 @@ export default {
 
 <template>
 
-  <main v-if="store.isLoadMovie && store.isLoadTV">
+  <!-- <main v-if="store.isLoadMovie && store.isLoadTV">
     <div class="jt-container py-5" v-if="store.movie.length > 0">
 
       <div class="row">
@@ -59,9 +61,10 @@ export default {
     </div>
 
   </main>
+  <div class="loading" v-else>Loading...</div>   -->
 
   <!-- app loading da fare -->
-  <div class="loading" v-else>Loading...</div>  
+  <AppLoading/>
   
 </template>
 

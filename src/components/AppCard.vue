@@ -79,7 +79,7 @@ export default {
           :star-size="30"
           :read-only="true"
           :increment="1"
-          :active-color="['#A7121D']"
+          :active-color="['#E50815']"
           :show-rating="false"
           inactive-color="white">
           </star-rating>
