@@ -70,7 +70,7 @@ export default {
         
         <div 
         :class="getFlag()"
-        class="flag"></div>
+        class="flag rounded-4"></div>
   
         <div class="rating-stars">
           <star-rating 
