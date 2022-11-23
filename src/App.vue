@@ -37,6 +37,23 @@ export default {
       })
     },
 
+    getApiTrend(){
+      store.isLoadTrend = false;
+      axios.get(store.apiTrendingUrl)
+      .then(result =>{
+        store.trending = result.data.results;
+        console.log(result.data.results)
+        store.isLoadTrend = true
+      })
+      .catch(error => {
+        console.log(error)
+      })
+    },
+
+    getPopular(){
+      this.getApiTrend;
+    },
+
     startSearch(){
       store.isLoadMovie = false;
       store.isLoadTV = false;
@@ -57,6 +74,7 @@ export default {
 
   mounted(){
     this.startSearch();
+    this.getApiTrend()
   },
 }
 

@@ -2,13 +2,15 @@
 import { store } from '../data/store';
 
 import AppCard from './AppCard.vue';
-import AppLoading from './AppLoading.vue'
+import AppLoading from './AppLoading.vue';
+import AppJumbotron from './AppJumbotron.vue'
 
 export default {
   name:'AppMain',
   components:{
     AppCard,
     AppLoading,
+    AppJumbotron
   },
   data(){
     return{
@@ -20,6 +22,8 @@ export default {
 </script>
 
 <template>
+
+  <AppJumbotron/>
 
   <main v-if="store.isLoadMovie && store.isLoadTV">
     <div class="jt-container py-5" v-if="store.movie.length > 0">
