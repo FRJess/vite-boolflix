@@ -11,7 +11,9 @@ export const store = reactive({
   movie: [],
   tv: [],
   imageUrl: "http://image.tmdb.org/t/p/w500",
-  flagClass: "fi fi-"
+  flagClass: "fi fi-",
+  isLoadMovie: "true",
+  isLoadTV: "true",
 })
 
 

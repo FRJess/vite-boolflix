@@ -18,28 +18,50 @@ export default {
 </script>
 
 <template>
-  <!-- <h1 class="jt-container">
-    {{title}}
-  </h1> -->
 
-  <div class="jt-container py-5">
+  <main v-if="store.isLoadMovie && store.isLoadTV">
+    <div class="jt-container py-5" v-if="store.movie.length > 0">
 
-    <div class="row">
-      <AppCard
-      v-for="card in store.movie" 
-      :card="card"
-      :key="card.id"
-      :pathImg="card.poster_path"
-      />
-
-      <AppCard
-      v-for="card in store.tv" 
-      :card="card"
-      :key="card.id"
-      :pathImg="card.poster_path"
-      />
+      <div class="row">
+        <h2 class="ps-4 fs-1 py-2" v-if="!store.default">
+          {{ store.movie.length }} movies found
+        </h2>
+        <AppCard
+        v-for="card in store.movie" 
+        :card="card"
+        :key="card.id"
+        :pathImg="card.poster_path"
+        />
+      </div>
     </div>
-  </div>
+
+    <div class="jt-container py-2" v-if="store.tv.length > 0">
+      <div class="row">
+        <h2 class="ps-4 fs-1 py-2" v-if="!store.default">
+          {{ store.tv.length }} tv shows found
+        </h2>
+        <AppCard
+        v-for="card in store.tv" 
+        :card="card"
+        :key="card.id"
+        :pathImg="card.poster_path"
+        />
+      </div>
+    </div>
+
+    <div
+      class="container"
+      v-if="store.movie.length === 0 && store.tv.length === 0"
+    >
+      <div class="row text-center py-5">
+        <h2>no results</h2>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- app loading da fare -->
+  <div class="loading" v-else>Loading...</div>  
   
 </template>
 
