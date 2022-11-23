@@ -21,4 +21,5 @@ export const store = reactive({
 })
 
 //tofix: keyup non funziona in AppSearch - loader non appare
-//toadd: director - crew - year
+//toadd: director - crew - year - popular tvshows
+//toimprove: cards usando slider
