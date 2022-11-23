@@ -17,6 +17,8 @@
     "flag-icons": "^6.6.6",
     "star-rating.js": "^4.3.0",
     "vue": "^3.2.41",
+    "vue-flipper": "^1.0.0",
+    "vue-info-card": "^0.1.4",
     "vue-star-rating": "^2.1.0"
   },
   "devDependencies": {

@@ -13,11 +13,19 @@ export default {
   data(){
     return{
       store,
-
+      summary: ''
 
     }
   },
   methods:{
+    getSummary(){
+      store.isOverviewClicked = true;
+      console.log('TRAMA')
+    },
+
+    resetCard(){
+      store.isOverviewClicked = false;
+    },
 
     getFlag(){
       if (this.card.original_language === 'en'){
@@ -45,7 +53,7 @@ export default {
 
 <template>
 
-  <div class="card jt-card col-2 text-center">
+  <div class="card jt-card col-2 text-center" @mouseleave="resetCard()">
 
     <div class="cover">
       <img v-if="this.card.poster_path == null" src="../assets/img/no_poster.jpg" alt="no poster available">
@@ -54,22 +62,29 @@ export default {
     </div>
 
     <div class="card-info">
-      <div class="summary px-2">{{card.overview.substring(0,150)+"..."}}</div>
+      <div class="summary"  v-if="store.isOverviewClicked">
+       {{this.card.overview.substring(0,180)+"..."}}
+      </div>
 
-      <div 
-      :class="getFlag()"
-      class="flag"></div>
-
-      <div class="rating-stars">
-        <star-rating 
-        :rating="getRating()"
-        :star-size="30"
-        :read-only="true"
-        :increment="1"
-        :active-color="['#A7121D']"
-        :show-rating="false"
-        inactive-color="white"></star-rating>
+      <div v-else>
+        <div @click="getSummary()">Show summary</div>
+        
+        <div 
+        :class="getFlag()"
+        class="flag"></div>
   
+        <div class="rating-stars">
+          <star-rating 
+          :rating="getRating()"
+          :star-size="30"
+          :read-only="true"
+          :increment="1"
+          :active-color="['#A7121D']"
+          :show-rating="false"
+          inactive-color="white">
+          </star-rating>
+        </div>
+
       </div>
     </div>
 
@@ -86,13 +101,12 @@ export default {
 
 
 .background {
-  background-color: lighten($secondary-color, 20%);
+  background-color: lighten($secondary-color, 0%);
   position: absolute;
   right: 0;
   left: 0;
-  bottom: -2em;
+  bottom: -15%;
   top: 5%;
-  padding: 5em;
   transform: scale(0.5, 1.2);
   opacity: 0;
   border-radius: 0.5em;
@@ -102,7 +116,7 @@ export default {
 .jt-card {
   background-color: #A7121D;
   margin: 50px 20px;
-  padding: 10px 0 ;
+  padding: 10px 5px ;
   height: 280px;
   position: relative;
   cursor: pointer;
@@ -113,17 +127,19 @@ export default {
       position: relative;
       right: 0;
       left: 0;
-      transform: scale(1.1);
+      transform: translateY(-20%) scale(1.1);
       z-index: 40;
+      margin-bottom: 20px;
       img{
-        transform: translateY(-20%) scale(1.2);
+        transform: scale(1.2);
+        margin-bottom: 10px;
       }
     }
 
     .card-info {
       opacity: 1;
       transition: transform 250ms ease, opacity 150ms linear;
-      transform: translate(0);
+      transform: translateY(-40%);
       z-index: 21;
     }
 
@@ -146,20 +162,16 @@ export default {
   }
 
   .title {
-    margin: 10px 0;
+    margin-top: 20px;
+    font-size: 1.2rem;
   }
 }
 
 .card-info {
   opacity: 0;
-  // position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1em 0;
   
 
   .summary{
@@ -168,12 +180,13 @@ export default {
     text-align: justify;
   }
   .flag{
-    width: 40px;
-    padding: 20px 0;
+    width: 30px;
+    padding: 10px 0;
   }
 
   .rating-stars{
-    padding: 20px 0;
+    padding: 10px 0;
+    margin-bottom: 20px;
   }
 }
 
