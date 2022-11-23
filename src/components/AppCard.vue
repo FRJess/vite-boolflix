@@ -12,11 +12,13 @@ export default {
 },
   data(){
     return{
-      store
+      store,
+
 
     }
   },
   methods:{
+
     getFlag(){
       if (this.card.original_language === 'en'){
         return "fi fi-gb";
@@ -44,10 +46,10 @@ export default {
 <template>
 
   <div class="card jt-card col-2 text-center">
-    <!-- <div class="rank">{{rank}}</div> -->
 
     <div class="cover">
-      <img :src="store.imageUrl + card.poster_path">
+      <img v-if="this.card.poster_path == null" src="../assets/img/no_poster.jpg" alt="no poster available">
+      <img v-else :src="store.imageUrl + card.poster_path" :alt="this.card.title || this.card.name">
       <h3 class="title">{{card.title || card.name}}</h3>
     </div>
 
@@ -84,7 +86,7 @@ export default {
 
 
 .background {
-  background-color: lighten($secondary-color, 40%);
+  background-color: lighten($secondary-color, 20%);
   position: absolute;
   right: 0;
   left: 0;
@@ -100,8 +102,8 @@ export default {
 .jt-card {
   background-color: #A7121D;
   margin: 50px 20px;
-  padding: 20px 0 10px 0 ;
-  min-height: 380px;
+  padding: 10px 0 ;
+  height: 280px;
   position: relative;
   cursor: pointer;
   
@@ -114,7 +116,7 @@ export default {
       transform: scale(1.1);
       z-index: 40;
       img{
-        transform: translateY(-50%) scale(1.3);
+        transform: translateY(-20%) scale(1.2);
       }
     }
 
@@ -171,7 +173,6 @@ export default {
   }
 
   .rating-stars{
-    // width: 40px;
     padding: 20px 0;
   }
 }
