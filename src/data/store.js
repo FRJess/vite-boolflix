@@ -10,7 +10,7 @@ export const store = reactive({
   type: '',
   movie: [],
   tv: [],
-  imageUrl: "http://image.tmdb.org/t/p/w342",
+  imageUrl: "http://image.tmdb.org/t/p/w500",
   flagClass: "fi fi-"
 })
 
@@ -21,4 +21,4 @@ export const store = reactive({
 
 // {{ card.vote_average}}
 
-// <!-- card con hover transform scale e informations hidden di default che appaiono -->
+// card con hover transform scale e informations hidden di default che appaiono

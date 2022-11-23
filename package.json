@@ -9,6 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource/archivo": "^4.5.10",
+    "@fontsource/arimo": "^4.5.10",
     "@fontsource/bebas-neue": "^4.5.9",
     "axios": "^1.1.3",
     "bootstrap": "^5.2.2",
