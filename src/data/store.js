@@ -21,5 +21,16 @@ export const store = reactive({
 })
 
 //tofix: keyup non funziona in AppSearch - loader non appare
-//toadd: director - crew - year - popular tvshows
-//toimprove: cards usando slider
+//toadd: director - crew - year - popular tvshows - filter?
+//toremove: flag (che trovo inutile)
+//toimprove: cards usando slider come jumbo
+
+
+//si può ordinare il risultato per data o voto o altro?
+
+
+// computed:{
+//   rating(){
+//     return this.card.vote_average / 2;
+//   },
+// }

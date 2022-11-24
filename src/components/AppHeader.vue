@@ -12,7 +12,7 @@ export default {
 </script>
 
 <template>
-  <div class="jt-container p-3">
+  <div class="jt-container p-5">
     <img src="../assets/img/logo.png" alt="logo Jessflix">
     <AppSearch @startSearch ="$emit('search')"/>
   </div>
@@ -27,6 +27,7 @@ export default {
 
 .jt-container{
   width: 100%;
+  // min-width: 100%;
 
   @include positionFlex('between');
   @include centerFlex('vertical');

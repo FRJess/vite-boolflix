@@ -40,7 +40,7 @@ export default {
       }else if (this.card.original_language === 'hu'){
         return "fi fi-hu";
       }else {
-        return "fi fi-xx";}
+        return "fi fi-gb";}
     },
 
     getRating(){
@@ -62,7 +62,7 @@ export default {
 
     <div class="card-info">
       <div class="summary"  v-if="store.isOverviewClicked">
-       {{this.card.overview.substring(0,180)+"..."}}
+      {{this.card.overview.substring(0,180)+"..."}}
       </div>
 
       <div v-else>
@@ -70,7 +70,7 @@ export default {
         
         <div 
         :class="getFlag()"
-        class="flag rounded-4"></div>
+        class="flag rounded-2"></div>
   
         <div class="rating-stars">
           <star-rating 
@@ -80,7 +80,10 @@ export default {
           :increment="1"
           :active-color="['#E50815']"
           :show-rating="false"
-          inactive-color="white">
+          :round-start-rating= "true"
+          inactive-color="white"
+          :glow="4"
+          glow-color="#ffff00">
           </star-rating>
         </div>
 
@@ -100,7 +103,7 @@ export default {
 
 
 .background {
-  background-color: lighten($secondary-color, 0%);
+  background-color: $secondary-color;
   position: absolute;
   right: 0;
   left: 0;
@@ -113,12 +116,13 @@ export default {
 }
 
 .jt-card {
-  background-color: #A7121D;
+  background-color: $primary-color;
   margin: 50px 20px;
   padding: 10px 5px ;
   height: 280px;
+  min-width: 200px;
+  max-width: 250px;
   position: relative;
-  cursor: pointer;
   
 
   &:hover {
@@ -171,6 +175,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  
   
 
   .summary{

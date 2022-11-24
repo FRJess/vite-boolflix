@@ -56,7 +56,7 @@ export default {
     </div>
 
     <div
-      class="container"
+      class="jt-container"
       v-if="store.movie.length === 0 && store.tv.length === 0"
     >
       <div class="row text-center py-5">
@@ -67,10 +67,8 @@ export default {
   </main>
 
     <!-- app loading presente ma non appare-->
-    <AppLoading v-else/>
+  <AppLoading v-else/>
 
- 
-  
 </template>
 
 <style lang="scss" scoped>

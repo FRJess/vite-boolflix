@@ -12,16 +12,16 @@ export default {
 </script>
 
 <template>
-  <div class="search-container">
+  <div class="search-container mx-2">
     <div class="row">
 
-      <div class="col-auto">
+      <div class="col-5">
         <input
         @keyup.enter="$emit('starSearch')" 
         v-model.trim="store.apiParams.query" type="text" class="form-control" placeholder="Search Movie or TV Show">
       </div>
 
-      <div class="col-auto">
+      <div class="col-4">
         <select
         v-model="store.type" 
         class="form-select">
@@ -32,7 +32,7 @@ export default {
       </div>
 
 
-      <div class="col-auto">
+      <div class="col-3">
         <button @click="$emit('startSearch')" class="btn jt-btn px-4">Search</button>
       </div>
 
@@ -46,6 +46,10 @@ export default {
 
 @use "../styles/partials/variables" as *;
 @use "../styles/partials/mixins" as *;
+
+// .search-container{
+//   pa
+// }
 
 .jt-btn{
   background-color: $primary-color;
