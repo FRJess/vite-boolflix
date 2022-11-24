@@ -30,6 +30,12 @@ export default {
 
   @include positionFlex('between');
   @include centerFlex('vertical');
+
+  img{
+    filter: saturate(200%);
+    -webkit-filter: saturate(200%);
+      
+  }
 }
 
 </style>
