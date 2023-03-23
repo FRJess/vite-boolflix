@@ -17,7 +17,7 @@ export default {
 
       <div class="col-5">
         <input
-        @keyup.enter="$emit('starSearch')" 
+        @keyup.enter="$emit('startSearch')" 
         v-model.trim="store.apiParams.query" type="text" class="form-control" placeholder="Search Movie or TV Show">
       </div>
 

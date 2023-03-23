@@ -80,9 +80,9 @@ export default {
       <div v-else>
         <div @click="getSummary()">Show summary</div>
         
-        <div 
+        <!-- <div 
         :class="getFlag()"
-        class="flag rounded-2"></div>
+        class="flag rounded-2"></div> -->
   
         <div class="rating-stars">
           <star-rating 
@@ -131,7 +131,7 @@ export default {
   background-color: $primary-color;
   margin: 50px 20px;
   padding: 10px 5px ;
-  height: 280px;
+  height: 300px;
   min-width: 200px;
   max-width: 250px;
   position: relative;
@@ -142,9 +142,10 @@ export default {
       position: relative;
       right: 0;
       left: 0;
-      transform: translateY(-20%) scale(1.1);
+      transform: translateY(-20%) scale(1.0);
+      // transform: scale(1.5);
       z-index: 40;
-      margin-bottom: 20px;
+      margin-bottom: 5px;
       img{
         transform: scale(1.2);
         margin-bottom: 10px;
@@ -159,7 +160,7 @@ export default {
     }
 
     .background {
-      transform: scale(1.4);
+      transform: scale(1.2);
       opacity: 1;
     }
   }
@@ -169,7 +170,7 @@ export default {
   transition: 250ms;
 
   img {
-    height: 150px;
+    height: 200px;
     max-width: 100%;
     border-radius: 0.5em;
     background-repeat: no-repeat;
@@ -177,7 +178,7 @@ export default {
   }
 
   .title {
-    margin-top: 20px;
+    margin-top: 10px;
     font-size: 1.2rem;
   }
 }
