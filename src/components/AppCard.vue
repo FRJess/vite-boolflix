@@ -13,13 +13,24 @@ export default {
   data(){
     return{
       store,
-      summary: ''
+      summary: '',
+      releaseYear: '',
 
     }
   },
+
+  created() {
+      let releaseDate = new Date(this.card.release_date);
+      this.releaseYear = releaseDate.getFullYear();
+    },
+
   methods:{
     getSummary(){
       store.isOverviewClicked = true;
+    },
+
+    getCard(){
+      store.isOverviewClicked = false;
     },
 
     resetCard(){
@@ -58,10 +69,11 @@ export default {
       <img v-if="this.card.poster_path == null" src="../assets/img/no_poster.jpg" alt="no poster available">
       <img v-else :src="store.imageUrl + card.poster_path" :alt="this.card.title || this.card.name">
       <h3 class="title">{{card.title || card.name}}</h3>
+      <h3 class="title">{{ releaseYear }}</h3>
     </div>
 
     <div class="card-info">
-      <div class="summary"  v-if="store.isOverviewClicked">
+      <div class="summary"  v-if="store.isOverviewClicked" @click="getCard()">
       {{this.card.overview.substring(0,180)+"..."}}
       </div>
 
