@@ -33,7 +33,7 @@ export default {
   <div class="jumbotron my-4">
 
     <swiper class="swiper"
-    :slidesPerView="3"
+    :slidesPerView="6"
     :spaceBetween="10"
     :freeMode="true"
     :pagination="{
