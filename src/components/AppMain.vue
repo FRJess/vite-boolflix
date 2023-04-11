@@ -2,14 +2,12 @@
 import { store } from '../data/store';
 
 import AppCard from './AppCard.vue';
-import AppLoading from './AppLoading.vue';
 import AppJumbotron from './AppJumbotron.vue'
 
 export default {
   name:'AppMain',
   components:{
     AppCard,
-    AppLoading,
     AppJumbotron
   },
   data(){
@@ -65,9 +63,6 @@ export default {
     </div>
 
   </main>
-
-    <!-- app loading presente ma non appare-->
-  <AppLoading v-else/>
 
 </template>
 
