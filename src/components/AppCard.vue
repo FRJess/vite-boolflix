@@ -90,7 +90,7 @@ export default {
           :star-size="30"
           :read-only="true"
           :increment="1"
-          :active-color="['#E50815']"
+          :active-color="['#FF0005']"
           :show-rating="false"
           :round-start-rating= "true"
           inactive-color="white"
