@@ -143,7 +143,6 @@ export default {
       right: 0;
       left: 0;
       transform: translateY(-20%) scale(1.0);
-      // transform: scale(1.5);
       z-index: 40;
       margin-bottom: 5px;
       img{
